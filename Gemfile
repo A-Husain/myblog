@@ -53,6 +53,15 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
+
+# A modern CSS framework based on Flexbox
+gem 'bulma-rails', '~> 0.9.4'
+
+# Forms made easy
+gem 'simple_form', '~> 5.2'
+
+
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -62,6 +71,15 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Provides a better error page for Rails and other Rack apps.
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  
+  #Guard is a command line tool to easily handle events on file system modifications.
+  gem 'guard', '~> 2.18'
+
+  # Guard::LiveReload automatically reloads your browser when 'view' files are modified.
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do
