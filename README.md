@@ -47,29 +47,29 @@ This file provides the reader with all the gems required for the successful func
 Download Ruby, Rails, and Sublime Text using the respective official websites. 
 
 Once downloaded, open the Command Prompt and run:
-'''bash
+```bash
 ruby -v
-'''
+```
 and
-'''bash
+```bash
 rails -v
-'''
+```
 to ensure both are downloaded.
 
 Fork and clone the repo by downloading it to your local device. 
 
 Open Sublime Text, click on File > Open Folder and navigate to where MyBlog was downloaded. Once the file is open, navigate to it using the Command Prompt. Then run:
 
-'''bash
+```bash
 bundle install
-'''
+```
 
 to ensure all the required gems are installed. 
 
 Run:
-'''bash
-rails s 
-'''
+```bash
+rails s
+```
 
 Then open your preferred web browser and type "localhost:3000" to view the website. 
 
