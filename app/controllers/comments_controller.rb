@@ -11,7 +11,6 @@ def destroy
 	@comment = @post.comments.find(params[:id])
 	@comment.destroy
 	redirect_to post_path(@post)
-
 end
 
 
