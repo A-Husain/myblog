@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
 
+	#ensuring a user is logged in before allowing them to view posts
+	before_action :ensure_current_user
+
 	def index
-		@posts = Post.all.order("created_at DESC")
+		@posts = current_user.posts 
 	end
 
 	def new
@@ -9,7 +12,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@post = current_user.posts.new(post_params)
 
 		if @post.save
 			redirect_to @post
@@ -48,6 +51,10 @@ class PostsController < ApplicationController
 
 
 	private
+
+	def set_post
+		@post = current_user.posts.find(params[:id])
+	end
 
 	def post_params
 		params.require(:post).permit(:title, :content)

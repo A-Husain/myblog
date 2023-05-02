@@ -8,6 +8,9 @@ class User < ApplicationRecord
 	# password validations to add entropy to passwords and make sure the length is at least 5
 	validates :password, length: { minimum: 5, allow_nil: true }
 
+	# defining the relationship between users and posts
+	has_many :posts
+	
 	def password
 		@password
 	end

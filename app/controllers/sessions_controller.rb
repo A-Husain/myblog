@@ -16,6 +16,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:user_id] = nil
+    redirect_to sign_in_path
+  end
+
   private
 
   def user_params

@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myblog</title>
+    <% if current_user %>
+      Hi <%= current_user.email %>
+    <% end %>
+    <title>
+      <% if current_user %>
+        <%= current_user.email %>'s Blog
+      <% end %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -26,7 +33,14 @@
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
-              <%= link_to "Create New Post", new_post_path, class:"navbar-item" %>
+              <% if current_user %>
+                <%= link_to "Create New Post", new_post_path, class:"navbar-item" %>
+              <% end %>
+            </div>
+            <div class="navbar-end">
+              <% if current_user %>
+                <%= link_to "Log out", sign_out_path %>
+              <% end %>  
             </div>
           </div>
         </div>
@@ -43,11 +57,10 @@
     </div>
   </section>
 
-    <% if current_user %>
-      Hi <%= current_user.email %>
-    <% end %>
+    
 
 
     <%= yield %>
   </body>
+
 </html>
