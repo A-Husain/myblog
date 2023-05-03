@@ -10,7 +10,8 @@ class User < ApplicationRecord
 
 	# defining the relationship between users and posts
 	has_many :posts
-	
+	has_many :comments
+
 	def password
 		@password
 	end

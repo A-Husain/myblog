@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'sessions/new'
   get '/register', to: 'users#new'
   resources :users, only: [:create]
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   get '/sign_in', to: 'sessions#new'
   get '/sign_out', to: 'sessions#destroy'
   resources :sessions, only: [:create]
+
+  get 'search', to:'search#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

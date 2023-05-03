@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
 	helper_method :current_user
-
+	before_action :set_query
+		
+	def set_query
+		@q = Post.ransack(params[:q])
+	end
 
 	def ensure_current_user
 		if current_user.nil?
