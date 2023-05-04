@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'homepage', to: "homepage#index"
   
+  get 'user', to: 'users#profile'
+
   get 'sessions/new'
   get '/register', to: 'users#new'
   resources :users, only: [:create]

@@ -7,7 +7,7 @@
 				</p>
 			</div>
 			<div>
-				By <%= current_user.name %> at <%= comment.updated_at %>
+				<h4>posted by <%= link_to current_user.name, homepage_path(comment.user_id) %> at <%= comment.updated_at %></h4>
 			</div>
 			
 		</div>

@@ -15,7 +15,7 @@
 						<%= post.content %>
 					</div>
 					<div>
-						By <%= current_user.name %> at <%= post.updated_at %>
+						<h4>posted by <%= link_to post.user.name, homepage_path(post.user) %></h4>
 					</div>
 				</div>
 			</div>

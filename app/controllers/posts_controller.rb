@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 	before_action :ensure_current_user
 
 	def index
-		@posts = current_user.posts 
+		@posts = Post.all
 	end
 
 	def new
@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 
 	def create
 		@post = current_user.posts.new(post_params)
+		@post.user = current_user
+
 
 		if @post.save
 			redirect_to @post
@@ -57,7 +59,7 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :content)
+		params.require(:post).permit(:name, :title, :content)
 	end
 
 
