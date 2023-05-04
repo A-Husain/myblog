@@ -3,14 +3,14 @@
 		<div class="media-content">
 			<div class="content">
 				<p>
-					<strong><%= comment.name %>: </strong>
-					<%= comment.comment %>
+					<strong><%= comment.comment %></strong>
 				</p>
+			</div>
+			<div>
+				By <%= current_user.name %> at <%= comment.updated_at %>
 			</div>
 			
 		</div>
-
-		
 
 		<%= button_to 'Delete Comment', post_path(comment.post, comment), method: :delete, class: "button is-danger", form: { data: { turbo_confirm: 'Are you sure?' } } %>
 	</article>

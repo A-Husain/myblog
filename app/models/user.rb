@@ -9,8 +9,8 @@ class User < ApplicationRecord
 	validates :password, length: { minimum: 5, allow_nil: true }
 
 	# defining the relationship between users and posts
-	has_many :posts
-	has_many :comments
+	has_many :posts, dependent: :destroy
+	has_many :comments, dependent: :destroy
 
 	def password
 		@password
@@ -27,4 +27,5 @@ class User < ApplicationRecord
 		BCrypt::Password.new(password_digest).is_password?(raw)
 	end
 
+	
 end

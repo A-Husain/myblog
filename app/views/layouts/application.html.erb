@@ -37,7 +37,6 @@
                 <%= link_to "Create New Post", new_post_path, class:"navbar-item" %>
               <% end %>
             </div>
-            <br>
             <div class="navbar-end">
               <% if current_user %>
                 <%= link_to "Log out", sign_out_path %>
@@ -61,9 +60,6 @@
     <div class="container has-text-right">
         <%= render 'search/form' %>
     </div>
-
-    
-
 
     <%= yield %>
   </body>
