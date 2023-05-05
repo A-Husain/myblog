@@ -24,7 +24,9 @@
       <nav class="navbar">
         <div class="container">
           <div class="navbar-brand">
-            <%= link_to 'My Blog', homepage_path, class: "navbar-item" %>
+            <% if current_user %>
+              <%= link_to 'My Blog', homepage_path, class: "navbar-item" %>
+            <% end %>
           <span class="navbar-burger burger" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
@@ -38,7 +40,9 @@
               <% end %>
             </div>
             <div class="navbar-end">
-              <%= link_to "Newsfeed", root_path %>
+              <% if current_user %>
+                <%= link_to "Newsfeed", root_path %>
+              <% end %> 
             </div>
             <div class="navbar-end">
               <% if current_user %>
